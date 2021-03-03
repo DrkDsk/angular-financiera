@@ -15,14 +15,16 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule, HttpClientXsrfModule} from '@angular/common/http';
+import { DeleteComponent } from './Components/client/delete/delete.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNavigationComponent,
-    DashboardComponent
+    DashboardComponent,
+    DeleteComponent
   ],
   imports: [
     HttpClientModule,
@@ -37,7 +39,11 @@ import {HttpClientModule} from '@angular/common/http'
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'XSRF-TOKEN',
+      headerName: 'X-CSRF-TOKEN'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

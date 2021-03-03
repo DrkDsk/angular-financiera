@@ -20,4 +20,10 @@ export class DashboardComponent implements OnInit {
       this.clients = data;
     })
   }
+
+  deleteClient(client:Client){
+    this.service.deleteClient(client).subscribe(data => {
+      this.ngOnInit();
+    })
+  }
 }
