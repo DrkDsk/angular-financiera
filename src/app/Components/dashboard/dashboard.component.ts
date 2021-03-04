@@ -12,6 +12,7 @@ import { Router} from '@angular/router'
 export class DashboardComponent implements OnInit {
 
   clients:Client[] = [];
+  client = new Client();
 
   constructor( private service : ListarDataService, private router:Router) { }
 
@@ -24,6 +25,17 @@ export class DashboardComponent implements OnInit {
   deleteClient(client:Client){
     this.service.deleteClient(client).subscribe(data => {
       this.ngOnInit();
+    })
+  }
+
+  addClient(){
+    this.router.navigate(['add'])
+  }
+
+  saveClient(){
+    this.service.addClient(this.client).subscribe( data => {
+      console.log("here")
+      this.ngOnInit()
     })
   }
 }
