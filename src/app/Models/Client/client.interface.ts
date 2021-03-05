@@ -1,6 +1,6 @@
 export class Client{
-    id: String = ""
-    name : String = ""
-    phone: String = ""
-    address: String = ""
+    id: string = ""
+    name : string = ""
+    phone: string = ""
+    address: string = ""
 }
