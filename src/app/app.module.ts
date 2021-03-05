@@ -18,6 +18,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule} from '@angular/common/http';
 import { AddComponent } from './Components/client/add/add.component';
 import { FormsModule } from '@angular/forms'
+import { MatInputModule} from '@angular/material/input';
+import { EditComponent } from './Components/client/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms'
     MyNavigationComponent,
     DashboardComponent,
     AddComponent,
+    EditComponent
   ],
+  
   imports: [
     FormsModule,
     HttpClientModule,
@@ -41,6 +45,7 @@ import { FormsModule } from '@angular/forms'
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatInputModule
     
   ],
   providers: [],
