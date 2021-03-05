@@ -29,7 +29,7 @@
                   <td>{{client.phone}}</td>
                   <td>{{client.address}}</td>
                   <td>
-                      <button class="btn btn-primary form-group ml-2">Editar</button>
+                      <button (click)="editClient(client)" class="btn btn-primary form-group ml-2">Editar</button>
                       <button (click)="deleteClient(client)" class="ml-2 btn form-group btn-danger">Borrar</button>
                   </td>
                 </tr>
