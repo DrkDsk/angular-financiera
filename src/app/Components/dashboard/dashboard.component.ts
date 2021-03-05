@@ -32,9 +32,13 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['add'])
   }
 
+  editClient(client:Client){
+    localStorage.setItem("id",client.id)
+    this.router.navigate(['edit'])
+  }
+
   saveClient(){
     this.service.addClient(this.client).subscribe( data => {
-      console.log("here")
       this.ngOnInit()
     })
   }
