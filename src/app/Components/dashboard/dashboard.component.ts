@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ListarDataService}  from '../../Services/client/listar-data.service'
 import { Client} from '../../Models/Client/client.interface'
 import { Router} from '@angular/router'
@@ -11,7 +11,8 @@ import { Router} from '@angular/router'
 
 export class DashboardComponent implements OnInit {
 
-  clients:Client[] = [];
+  @Input() clients:Client[] = [];
+
   client = new Client();
 
   constructor( private service : ListarDataService, private router:Router) { }
