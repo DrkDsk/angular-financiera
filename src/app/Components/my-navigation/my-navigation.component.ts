@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-my-navigation',
@@ -16,6 +17,10 @@ export class MyNavigationComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private router: Router, private breakpointObserver: BreakpointObserver) {}
+
+  addClient(){
+    this.router.navigate(['add'])
+  }
 
 }
