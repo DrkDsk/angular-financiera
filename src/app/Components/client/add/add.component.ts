@@ -10,23 +10,22 @@ import { Client } from '../../../Models/Client/client.interface'
 
 export class AddComponent implements OnInit {
 
-  clients:Client[] = [];
+  clientsUpdated:Client[] = [];
   client = new Client();
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   
   constructor(private router: Router, private service:ListarDataService) { }
 
   getClients(){
     this.service.getClients().subscribe( data => {
-      this.clients = data;
+      this.clientsUpdated = data;
     })
   }
 
   saveClient(){
     this.service.addClient(this.client).subscribe( data => {
-      this.router.navigate([''])
+      this.getClients()
     })
   }
 }
