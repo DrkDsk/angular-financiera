@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +19,7 @@ import { AddComponent } from './Components/client/add/add.component';
 import { FormsModule } from '@angular/forms'
 import { MatInputModule} from '@angular/material/input';
 import { EditComponent } from './Components/client/edit/edit.component';
+import { AddButtonComponent } from './Components/add-button/add-button.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { EditComponent } from './Components/client/edit/edit.component';
     MyNavigationComponent,
     DashboardComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    AddButtonComponent
   ],
   
   imports: [
@@ -47,6 +48,10 @@ import { EditComponent } from './Components/client/edit/edit.component';
     MatMenuModule,
     MatInputModule
     
+  ],
+  exports:[
+    AddComponent,
+    DashboardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
