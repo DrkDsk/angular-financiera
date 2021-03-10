@@ -19,7 +19,6 @@ import { AddComponent } from './Components/client/add/add.component';
 import { FormsModule } from '@angular/forms'
 import { MatInputModule} from '@angular/material/input';
 import { EditComponent } from './Components/client/edit/edit.component';
-import { AddButtonComponent } from './Components/add-button/add-button.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { AddButtonComponent } from './Components/add-button/add-button.component
     DashboardComponent,
     AddComponent,
     EditComponent,
-    AddButtonComponent
   ],
   
   imports: [
