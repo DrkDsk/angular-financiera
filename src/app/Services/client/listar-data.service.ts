@@ -8,7 +8,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 })
 export class ListarDataService {
 
-  private urlApi = "http://127.0.0.1:8000/api/"
+  private urlApi = "/api/"
 
   constructor(private http:HttpClient) { }
   
@@ -21,7 +21,7 @@ export class ListarDataService {
   }
 
   deleteClient(client:Client){
-    return this.http.delete<Client[]>(this.urlApi+"clients/"+client.id)
+    return this.http.delete<Client>(this.urlApi+"clients/" + client.id)
   }
 
   addClient(client:Client){
@@ -33,6 +33,6 @@ export class ListarDataService {
   }
 
   updateClient(client:Client){
-    return this.http.patch<Client>(this.urlApi + 'clients/' + client.id, client)
+    return this.http.put<Client>(this.urlApi + 'clients/', client)
   }
 }
