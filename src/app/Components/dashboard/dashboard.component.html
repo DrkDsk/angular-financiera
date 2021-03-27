@@ -1,4 +1,5 @@
 <div class="grid-container">
+  <button *ngIf="hideButton()" (click)="addClient()" class="btn btn-primary form-group">Agregar Clientes</button>
   <div class="d-flex">
     <div class="col-md-12" style="padding-left: 0%;">
       <mat-card>
@@ -8,7 +9,7 @@
         <mat-card-content>
           <div class="table-responsive">
             <table class="text-center table">
-              <thead class="">
+              <thead>
                 <tr>
                   <th scope="col">Nombre</th>
                   <th scope="col">Teléfono</th>
@@ -24,7 +25,7 @@
                   <td>{{client.address}}</td>
                   <td>
                       <button (click)="editClient(client)" class="btn btn-primary form-group ml-2">Editar</button>
-                      <button (click)="deleteClient(client)" class="ml-2 btn form-group btn-danger">Borrar</button>
+                      <button (click)="deleteClient(client)" class="btn btn-danger form-group ml-2">Borrar</button>
                   </td>
                 </tr>
               </tbody>
