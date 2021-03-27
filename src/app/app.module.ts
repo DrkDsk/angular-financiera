@@ -10,15 +10,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule} from '@angular/common/http';
 import { AddComponent } from './Components/client/add/add.component';
-import { FormsModule } from '@angular/forms'
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule} from '@angular/material/input';
 import { EditComponent } from './Components/client/edit/edit.component';
+import { GetLoansComponent } from './Components/loan/get-loans/get-loans.component';
+import { AddLoanComponent } from './Components/loan/add-loan/add-loan.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { EditComponent } from './Components/client/edit/edit.component';
     DashboardComponent,
     AddComponent,
     EditComponent,
+    AddLoanComponent,
+    GetLoansComponent,
   ],
-  
   imports: [
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     BrowserModule,
@@ -45,11 +49,12 @@ import { EditComponent } from './Components/client/edit/edit.component';
     MatCardModule,
     MatMenuModule,
     MatInputModule
-    
   ],
   exports:[
     AddComponent,
-    DashboardComponent
+    DashboardComponent,
+    GetLoansComponent,
+    AddLoanComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
