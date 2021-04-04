@@ -1,5 +1,5 @@
 <div class="grid-container">
-    <button *ngIf="hideButton()" class="btn btn-primary form-group">Agregar Préstamo</button>
+    <button *ngIf="hideButton()" (click)="addLoan()" class="btn btn-primary form-group">Agregar Préstamo</button>
     <div class="d-flex">
         <div class="col-md-12" style="padding-left: 0%;">
             <mat-card>
