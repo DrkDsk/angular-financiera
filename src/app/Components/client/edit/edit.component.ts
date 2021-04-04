@@ -23,7 +23,7 @@ export class EditComponent implements OnInit {
 
   updataClient(client:Client){
     this.service.updateClient(client).subscribe(data => {
-      this.router.navigate([''])
+      this.router.navigate(['clients'])
     })
   }
 }
