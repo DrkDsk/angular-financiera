@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Client } from 'src/app/Models/Client/client.interface';
 import { Loan } from 'src/app/Models/Loan/loan.interface';
 
 @Injectable({
@@ -14,6 +15,10 @@ export class ServicesLoanService {
 
   getLoans():Observable<Loan[]>{
     return this.http.get<Loan[]>(this.urlApi+'loans')
+  }
+
+  getNames():Observable<Client[]>{
+    return this.http.get<Client[]>(this.urlApi+'clients')
   }
 
   deleteLoan(loan:Loan){
