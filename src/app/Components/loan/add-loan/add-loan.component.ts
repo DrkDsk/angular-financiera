@@ -19,6 +19,7 @@ export class AddLoanComponent implements OnInit {
 
   constructor(private service : ServicesLoanService, private router:Router, private _formBuilder: FormBuilder) {
     this.myForm = this._formBuilder.group({
+      clientID: ['',Validators.required],
       amount : ['',Validators.required],
       porcent: ['',Validators.required],
       payments_number : ['',Validators.required],
@@ -72,6 +73,12 @@ export class AddLoanComponent implements OnInit {
       else{
         this.myForm.controls.due_date.setValue("",{emitEvent:false})
       }
+    })
+  }
+  
+  addLoan(values: FormGroup){
+    this.service.addLoan(values.getRawValue()).subscribe(data => {
+      this.router.navigate(['loans'])
     })
   }
 }
