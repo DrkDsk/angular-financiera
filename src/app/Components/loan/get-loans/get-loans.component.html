@@ -31,7 +31,7 @@
                                     <td>{{loan.due_date | date:'shortDate'}}</td>
                                     <td>
                                         <button (click)="pay()" class="btn btn-success form-group ml-2">Editar</button>
-                                        <button (click)="deleteLoan()" class="btn btn-danger form-group ml-2">Borrar</button>
+                                        <button (click)="deleteLoan(loan.loanID)" class="btn btn-danger form-group ml-2">Borrar</button>
                                     </td>
                                 </tr>
                             </tbody>
