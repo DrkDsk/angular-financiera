@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Loan } from '../../../Models/Loan/loan.interface'
 import { Router} from '@angular/router'
@@ -9,7 +9,7 @@ import {ServicesLoanService} from '../../../Services/loan/services-loan.service'
   templateUrl: './get-loans.component.html',
   styleUrls: ['./get-loans.component.css']
 })
-export class GetLoansComponent implements OnInit {
+export class GetLoansComponent implements OnInit, OnDestroy {
 
   @Input() loans:Loan[] = []
   loansSubscription: Subscription = new Subscription;
@@ -20,6 +20,10 @@ export class GetLoansComponent implements OnInit {
     this.loansSubscription = this.service.getLoans().subscribe( data => {
       this.loans = data;
     })
+  }
+
+  ngOnDestroy(){
+    this.loansSubscription.unsubscribe();
   }
 
   hideButton(){
@@ -34,7 +38,9 @@ export class GetLoansComponent implements OnInit {
 
   }
 
-  deleteLoan(){
-
+  deleteLoan(id: string){
+    this.loansSubscription = this.service.deleteLoan(id).subscribe(data => {
+      this.ngOnInit()
+    })
   }
 }
