@@ -21,7 +21,7 @@ export class ListarDataService {
   }
 
   deleteClient(client:Client){
-    return this.http.delete<Client>(this.urlApi+"clients/" + client.id)
+    return this.http.delete<Client>(this.urlApi+"clients/" + client.clientID)
   }
 
   addClient(client:Client){
@@ -29,7 +29,7 @@ export class ListarDataService {
   }
   
   editClient(client:Client){
-    return this.http.patch<Client>(this.urlApi+ 'clients/' + client.id, client)
+    return this.http.patch<Client>(this.urlApi+ 'clients/' + client.clientID, client)
   }
 
   updateClient(client:Client){
