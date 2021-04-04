@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client } from 'src/app/Models/Client/client.interface';
 import { Loan } from 'src/app/Models/Loan/loan.interface';
+import { LoanRequest } from 'src/app/Models/Loan/loan_request.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,11 @@ export class ServicesLoanService {
     return this.http.get<Client[]>(this.urlApi+'clients')
   }
 
-  deleteLoan(loan:Loan){
-    return this.http.delete<Loan>(this.urlApi+"loans/" + loan.id);
+  deleteLoan(id : string){
+    return this.http.delete<Loan>(this.urlApi+"loans/" + id);
+  }
+
+  addLoan(loan:Loan){
+    return this.http.post<Loan>(this.urlApi+'loans',loan);
   }
 }
