@@ -22,7 +22,7 @@ export class AddComponent implements OnInit {
   constructor(private service:ListarDataService, private _formBuilder: FormBuilder) {
     this.formAdd = this._formBuilder.group({
       name: ['',Validators.required],
-      phone: ['',Validators.required],
+      phone: ['',Validators.compose([,Validators.required,Validators.minLength(10),Validators.maxLength(10)])],
       address : ['',Validators.required]
     })
   }
