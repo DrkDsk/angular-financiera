@@ -9,14 +9,14 @@
                 </mat-card-header>
 
                 <mat-card-content>
-                    <form [formGroup]="myForm" class="m-3">
+                    <form [formGroup]="myForm" class="m-3" (ngSubmit)="addLoan(myForm)">
                         <div class="row form-group">
                             <div class="col-md-8">
                                 <mat-form-field appearance="fill" class="example-full-width">
                                     <mat-label>Cliente:</mat-label>
-                                    <mat-select [formControl]="loanControl" required>
+                                    <mat-select formControlName="clientID" name="clientID" required>
                                         <mat-option>Seleccione un cliente:</mat-option>
-                                        <mat-option *ngFor="let client of clients" [value]="client">
+                                        <mat-option *ngFor="let client of clients" [value]="client.clientID">
                                             {{client.name}}
                                         </mat-option>
                                     </mat-select>
