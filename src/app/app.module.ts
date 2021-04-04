@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule} from '@angular/material/select'
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule} from '@angular/common/http';
 import { AddComponent } from './Components/client/add/add.component';
@@ -48,7 +49,8 @@ import { AddLoanComponent } from './Components/loan/add-loan/add-loan.component'
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   exports:[
     AddComponent,
