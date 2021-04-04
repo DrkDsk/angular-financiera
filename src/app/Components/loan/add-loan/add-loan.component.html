@@ -1,1 +1,80 @@
-<p>add-loan works!</p>
+<div class="grid-container">
+    <div class="d-flex justify-content-md-center">
+        <div class="mx-auto col-md-8">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Agregar Préstamo
+                    </mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <form [formGroup]="myForm" class="m-3">
+                        <div class="row form-group">
+                            <div class="col-md-8">
+                                <mat-form-field appearance="fill" class="example-full-width">
+                                    <mat-label>Cliente:</mat-label>
+                                    <mat-select [formControl]="loanControl" required>
+                                        <mat-option>Seleccione un cliente:</mat-option>
+                                        <mat-option *ngFor="let client of clients" [value]="client">
+                                            {{client.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="amount" name="amount" matInput type="number" placeholder="Cantidad">
+                                </mat-form-field>
+                                <small class="font-weight-bold text-danger" *ngIf="myForm.controls['amount'].errors && (myForm.controls['amount'].dirty || myForm.controls['amount'].touched)">
+                                    Por favor, ingresa una cantidad válida
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="porcent" name="porcent" matInput type="number" placeholder="Porcentaje">
+                                </mat-form-field>
+                                <small class="font-weight-bold text-danger" *ngIf="myForm.controls['porcent'].errors && (myForm.controls['porcent'].dirty || myForm.controls['porcent'].touched)">
+                                    Por favor, ingresa un porcentaje válido
+                                </small>
+                            </div>
+
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="payments_number" name="payments_number" matInput type="number" placeholder="Número de Pagos">
+                                </mat-form-field>
+                                <small class="font-weight-bold text-danger" *ngIf="myForm.controls['payments_number'].errors && (myForm.controls['payments_number'].dirty || myForm.controls['payments_number'].touched)">
+                                    Por favor, ingresa una cantidad de número de pagos válida
+                                </small>
+                            </div>
+
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="fee" name="fee" matInput type="number" placeholder="Cuota">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="ministry_date" name="ministry_date" type="date" matInput placeholder="Fecha de Inicio">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="due_date" name="due_date" type="date" matInput placeholder="Fecha de Termino">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <a routerLink="/" class=" form-group ml-2 btn btn-danger">Cancelar</a>
+                            <button [disabled]="myForm.invalid" class="form-group ml-2 btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
