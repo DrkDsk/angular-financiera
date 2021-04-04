@@ -26,6 +26,10 @@ export class GetLoansComponent implements OnInit {
     return !this.router.url.localeCompare("/loans")
   }
 
+  addLoan(){
+    this.router.navigate(["loans/add"])
+  }
+
   pay(){
 
   }
