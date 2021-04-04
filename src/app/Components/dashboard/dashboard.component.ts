@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   editClient(client:Client){
-    localStorage.setItem("id",client.id)
+    localStorage.setItem("id",client.clientID)
     this.router.navigate(['clients/edit'])
   }
 
