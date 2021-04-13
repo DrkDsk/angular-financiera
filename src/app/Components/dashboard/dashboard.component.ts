@@ -3,6 +3,7 @@ import { ListarDataService}  from '../../Services/client/listar-data.service'
 import { Client} from '../../Models/Client/client.interface'
 import { Router} from '@angular/router'
 import { Subscription } from 'rxjs';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,6 +16,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   client = new Client();
   @Input() clients:Client[] = [];
   clientsSubscription: Subscription = new Subscription;
+  displayedColumns: string[] = ['name', 'phone', 'address', 'options'];
+  dataSource = new MatTableDataSource<Client>(this.clients);
 
   constructor( private service : ListarDataService, private router:Router) { }
 
