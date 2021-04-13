@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavigationComponent } from './Components/my-navigation/my-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,6 +23,9 @@ import { MatInputModule} from '@angular/material/input';
 import { EditComponent } from './Components/client/edit/edit.component';
 import { GetLoansComponent } from './Components/loan/get-loans/get-loans.component';
 import { AddLoanComponent } from './Components/loan/add-loan/add-loan.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { HomeComponent } from './Components/home/home.component';
+import { NoopAnimationsModule} from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -32,8 +36,11 @@ import { AddLoanComponent } from './Components/loan/add-loan/add-loan.component'
     EditComponent,
     AddLoanComponent,
     GetLoansComponent,
+    PaymentComponent,
+    HomeComponent,
   ],
   imports: [
+    NoopAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
@@ -43,6 +50,7 @@ import { AddLoanComponent } from './Components/loan/add-loan/add-loan.component'
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatTableModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
