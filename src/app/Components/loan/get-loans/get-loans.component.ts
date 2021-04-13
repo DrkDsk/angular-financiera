@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Loan } from '../../../Models/Loan/loan.interface'
 import { Router} from '@angular/router'
 import {ServicesLoanService} from '../../../Services/loan/services-loan.service'
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-get-loans',
@@ -13,6 +14,8 @@ export class GetLoansComponent implements OnInit, OnDestroy {
 
   @Input() loans:Loan[] = []
   loansSubscription: Subscription = new Subscription;
+  displayedColumns: string[] = ['name', 'amount', 'payments_number', 'fee','ministry_date', 'due_date', 'options'];
+  dataSource = new MatTableDataSource<Loan>(this.loans);
 
   constructor(private service : ServicesLoanService, private router:Router) { }
 
