@@ -30,8 +30,8 @@
                                     <td>{{loan.ministry_date | date:'shortDate'}}</td>
                                     <td>{{loan.due_date | date:'shortDate'}}</td>
                                     <td>
-                                        <button (click)="pay()" class="btn btn-success form-group ml-2">Editar</button>
-                                        <button (click)="deleteLoan(loan.loanID)" class="btn btn-danger form-group ml-2">Borrar</button>
+                                        <button mat-button (click)="pay()" class="form-group ml-2"><mat-icon style="color: rgb(48, 113, 187);">edit</mat-icon></button>
+                                        <button mat-button (click)="deleteLoan(loan.loanID)" class="form-group ml-2"><mat-icon style="color: crimson;">delete</mat-icon></button>
                                     </td>
                                 </tr>
                             </tbody>
