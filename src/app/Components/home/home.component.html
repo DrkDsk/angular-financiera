@@ -1,0 +1,47 @@
+<div class="grid-container">
+    <div class="d-flex">
+        <div class="col-md-12">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Datos</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <mat-card style="background: rgb(20, 92, 139);">
+                                <mat-card-header>
+                                    <mat-card-title class="text-light">Clientes:</mat-card-title>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <p class="text-light m-3 title-font">{{statistics.noClientes}}</p>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                        
+                        <div class="col-md-4 form-group">
+                            <mat-card style="background: rgb(55, 66, 102);">
+                                <mat-card-header>
+                                    <mat-card-title class="text-light">Préstamos Realizados:</mat-card-title>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <p class="text-light m-3 title-font">{{statistics.noPrestamos}}</p>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <mat-card style="background: rgba(184, 8, 8, 0.671);">
+                                <mat-card-header>
+                                    <mat-card-title class="text-light">Pagos Realizados:</mat-card-title>
+                                </mat-card-header>
+                                <mat-card-content>
+                                        <p class="text-light m-3 title-font">{{statistics.noPagos}}</p>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
