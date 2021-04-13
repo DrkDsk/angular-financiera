@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Client} from '../../Models/Client/client.interface'
+import {Statistic} from '../../Models/Client/statistic.interface'
 import {Observable} from 'rxjs'
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 
@@ -11,6 +12,10 @@ export class ListarDataService {
   private urlApi = "/api/"
 
   constructor(private http:HttpClient) { }
+  
+  getStatistics():Observable<Statistic>{
+    return this.http.get<Statistic>(this.urlApi+"clients" + "/statistics");
+  }
   
   getClients():Observable<Client[]>{
     return this.http.get<Client[]>(this.urlApi+"clients");
