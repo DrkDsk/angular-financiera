@@ -1,0 +1,51 @@
+<div class="grid-container">
+    <div class="d-flex">
+        <div class="mx-auto col-md-8">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Agregar Clientes</mat-card-title>
+                </mat-card-header>
+                
+                <mat-card-content>
+                    <form class="m-3" [formGroup]="formAdd" (ngSubmit)="saveClient(formAdd)">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="name" matInput placeholder="Nombre" type="text">
+                                </mat-form-field>
+                                <small class="font-weight-bold text-danger" *ngIf="formAdd.controls['name'].errors && (formAdd.controls['name'].dirty || formAdd.controls['name'].touched)">
+                                    Por favor, ingresa un nombre válido
+                                </small>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="phone" matInput placeholder="Teléfono">
+                                </mat-form-field>
+                                <small class="font-weight-bold text-danger" *ngIf="formAdd.controls['phone'].errors && (formAdd.controls['phone'].dirty || formAdd.controls['phone'].touched)">
+                                    Por favor, ingresa un número telefónico válido
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="address" matInput placeholder="Dirección" type="text">
+                                </mat-form-field>
+                                <small class="font-weight-bold text-danger" *ngIf="formAdd.controls['address'].errors && (formAdd.controls['address'].dirty || formAdd.controls['address'].touched)">
+                                    Por favor, ingresa una Dirección válida
+                                </small>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <a routerLink="/" class="form-group ml-2 btn btn-danger">Cancelar</a>
+                            <button [disabled]="formAdd.invalid" class="form-group ml-2 btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<hr>
+<app-get-clients [clients] = "clientsUpdated"></app-get-clients>
+<router-outlet></router-outlet>
