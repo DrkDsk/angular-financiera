@@ -21,7 +21,7 @@ export class ListarDataService {
     return this.http.get<Client[]>(this.urlApi+"clients");
   }
 
-  getClientById(id: string){
+  getClientById(id: string):Observable<Client>{
     return this.http.get<Client>(this.urlApi+"clients/" + id + '/edit')
   }
 
