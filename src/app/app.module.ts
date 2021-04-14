@@ -23,9 +23,9 @@ import { MatInputModule} from '@angular/material/input';
 import { EditComponent } from './Components/client/edit/edit.component';
 import { GetLoansComponent } from './Components/loan/get-loans/get-loans.component';
 import { AddLoanComponent } from './Components/loan/add-loan/add-loan.component';
-import { PaymentComponent } from './Components/payment/payment.component';
 import { HomeComponent } from './Components/home/home.component';
-import { NoopAnimationsModule} from '@angular/platform-browser/animations'
+import { NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { GetPaymentsComponent } from './Components/payment/get-payments/get-payments.component'
 
 @NgModule({
   declarations: [
@@ -36,8 +36,8 @@ import { NoopAnimationsModule} from '@angular/platform-browser/animations'
     EditComponent,
     AddLoanComponent,
     GetLoansComponent,
-    PaymentComponent,
     HomeComponent,
+    GetPaymentsComponent,
   ],
   imports: [
     NoopAnimationsModule,
