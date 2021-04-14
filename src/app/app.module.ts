@@ -16,27 +16,27 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule} from '@angular/material/select'
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule} from '@angular/common/http';
-import { AddComponent } from './Components/client/add/add.component';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule} from '@angular/material/input';
-import { EditComponent } from './Components/client/edit/edit.component';
 import { GetLoansComponent } from './Components/loan/get-loans/get-loans.component';
 import { AddLoanComponent } from './Components/loan/add-loan/add-loan.component';
 import { HomeComponent } from './Components/home/home.component';
 import { NoopAnimationsModule} from '@angular/platform-browser/animations';
-import { GetPaymentsComponent } from './Components/payment/get-payments/get-payments.component'
+import { GetPaymentsComponent } from './Components/payment/get-payments/get-payments.component';
+import { GetClientsComponent} from './Components/client/get-clients/get-clients.component';
+import { AddClientsComponent } from './Components/client/add-clients/add-clients.component';
+import { EditClientsComponent } from './Components/client/edit-clients/edit-clients.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     MyNavigationComponent,
-    DashboardComponent,
-    AddComponent,
-    EditComponent,
+    GetClientsComponent,
+    AddClientsComponent,
+    EditClientsComponent,
     AddLoanComponent,
     GetLoansComponent,
-    HomeComponent,
     GetPaymentsComponent,
   ],
   imports: [
@@ -61,8 +61,7 @@ import { GetPaymentsComponent } from './Components/payment/get-payments/get-paym
     MatSelectModule
   ],
   exports:[
-    AddComponent,
-    DashboardComponent,
+    AddClientsComponent,
     GetLoansComponent,
     AddLoanComponent
   ],
